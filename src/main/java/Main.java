@@ -27,6 +27,7 @@ public class Main {
 
         System.out.println(player);
         //mission 1
+        System.out.println("Mission 1");
         String playerName = player.getName();
         System.out.println("Oh no \033[31m"+playerName+"\033[0m a troll appeared in the girls' bathroom, save Hermione!");
         System.out.println("Fight him!!!");
@@ -42,6 +43,15 @@ public class Main {
         else {
             System.out.println("You lose");
         }
+
+        //mission 2
+        System.out.println("Mission 2");
+        System.out.println("Oh no thomas riddle freed the basilisk. We must defeat him!");
+        Wizard wizard3 = new Wizard("Basilic", Pet.OWL, new Wand(1, 10), new House(0));
+        wizard3.getSpellResistance().put("Stuppefix", 0.0);
+        wizard3.getSpellResistance().put("WingardiumLeviosa", 0.0);
+        player.addSpell(new Hit());
+        wizard3.getSpellResistance().put("Hit",5.0);//use basilic fang
 
 
     }

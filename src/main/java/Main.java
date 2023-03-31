@@ -1,5 +1,6 @@
 import enums.Pet;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -15,13 +16,20 @@ public class Main {
         Pet[] possiblePets = {Pet.CAT, Pet.RAT, Pet.TOAD, Pet.OWL};
         int randomIndex = (int) (Math.random() * possiblePets.length);
         Pet randomPet = possiblePets[randomIndex];
-        Wizard player = new Wizard(name, randomPet , new Wand(1, 10), new House(0));
+        Random rand = new Random();
+        int random = rand.nextInt(4); // Generate a random index between 0 and 3
+        House randomHouse = new House(random);
+        Wizard player = new Wizard(name, randomPet , new Wand(1, 10), new House(random));
         player.setProbOfProtego(0);
 
         player.addSpell(new Stuppefix());
         player.addSpell(new WingardiumLeviosa());
 
         System.out.println(player);
+        //mission 1
+        String playerName = player.getName();
+        System.out.println("Oh no \033[31m"+playerName+"\033[0m a troll appeared in the girls' bathroom, save Hermione!");
+        System.out.println("Fight him!!!");
         Wizard wizard2 = new Wizard("Troll", Pet.OWL, new Wand(1, 10), new House(0));
         wizard2.addSpell(new Hit());
 

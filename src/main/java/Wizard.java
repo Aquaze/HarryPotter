@@ -52,9 +52,9 @@ public class Wizard extends Character {
     }
 
     public String toString() {
-        return " Wizard: " + getName() + " Health : " + getHealth() + "/" + getCurrentHealth() +
+        return "Wizard: " + getName() + " Health : " + getHealth() + "/" + getCurrentHealth() +
                 " pet : " + this.pet + " "
-                + this.house + " " + this.wand +
+                + House.getName() + " " + Wand.getLength() + Wand.getCore()+
                 " Spells :" + this.spells + " Potions : " + this.potions;
 
     }

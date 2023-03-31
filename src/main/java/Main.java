@@ -17,9 +17,9 @@ public class Main {
         int randomIndex = (int) (Math.random() * possiblePets.length);
         Pet randomPet = possiblePets[randomIndex];
         Random rand = new Random();
-        int random = rand.nextInt(4); // Generate a random index between 0 and 3
+        int random = rand.nextInt(4);
         House randomHouse = new House(random);
-        Wizard player = new Wizard(name, randomPet , new Wand(1, 10), new House(random));
+        Wizard player = new Wizard(name, randomPet , new Wand(0, 0), new House(random));
         player.setProbOfProtego(0);
 
         player.addSpell(new Stuppefix());
@@ -42,8 +42,6 @@ public class Main {
         else {
             System.out.println("You lose");
         }
-
-
 
 
     }

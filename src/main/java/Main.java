@@ -34,11 +34,10 @@ public class Main {
 
         System.out.println(player);
         Wizard wizard2 = new Wizard("Troll", Pet.OWL, new Wand(1, 10), new House(0));
-        wizard2.addSpell(new Stuppefix());
-        wizard2.addSpell(new WingardiumLeviosa());
+        wizard2.addSpell(new Hit());
 
-        wizard2.getSpellResistance().put("Stuppefix", 3.0); // faiblesse au sort stuppefix
-        wizard2.getSpellResistance().put("WingardiumLeviosa", 0.5); // resistance au sort levitation
+        wizard2.getSpellResistance().put("Stuppefix", 0.3); // resistance au sort stuppefix
+        wizard2.getSpellResistance().put("WingardiumLeviosa", 5.0); // faiblesse au sort levitation
 
         if(CombatHandler.fight(player, wizard2)){
             System.out.println("You win");

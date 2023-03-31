@@ -1,5 +1,5 @@
 public class Hit extends AbstractSpell {
-    public Stuppefix() {
+    public Hit() {
         this.name = "Hit";
     }
     @Override

@@ -6,8 +6,6 @@ public class Wand {
     public Wand(int core, int length) {
         this.core = Core.values()[core];
         this.length = length;
-        System.out.println(core);
-        System.out.println(length);
     }
 
     public static Core getCore() {

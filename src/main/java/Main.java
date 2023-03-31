@@ -45,6 +45,7 @@ public class Main {
         }
 
         //mission 2
+        player.setProbOfProtego(0.2);
         System.out.println("Mission 2");
         System.out.println("Oh no thomas riddle freed the basilisk. We must defeat him!");
         Wizard wizard3 = new Wizard("Basilic", Pet.OWL, new Wand(1, 10), new House(0));
@@ -52,6 +53,13 @@ public class Main {
         wizard3.getSpellResistance().put("WingardiumLeviosa", 0.0);
         player.addSpell(new Hit());
         wizard3.getSpellResistance().put("Hit",5.0);//use basilic fang
+
+        if(CombatHandler.fight(player, wizard3)){
+            System.out.println("You win");
+        }
+        else {
+            System.out.println("You lose");
+        }
 
 
     }

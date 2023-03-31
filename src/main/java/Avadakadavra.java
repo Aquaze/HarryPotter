@@ -1,5 +1,3 @@
-
-
 public class Avadakadavra extends AbstractSpell {
     public Avadakadavra() {
         this.name = "Avadakadavra";

@@ -1,12 +1,15 @@
 import enums.Pet;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
 
 
 
         System.out.println("Choisi un nom");
-        String name = InputHandler.getUserInput();
+        Scanner scanner = new Scanner(System.in);
+        String name = scanner.nextLine();
         /**
         System.out.println("Choisi une classe : 1 - Gryffondor, 2 - Serpentard, 3 - Poufsouffle, 4 - Serdaigle");
         int houseID = InputHandler.getValidInput(1,4)-1;
@@ -30,7 +33,7 @@ public class Main {
         player.addSpell(new WingardiumLeviosa());
 
         System.out.println(player);
-        Wizard wizard2 = new Wizard("Harry Potter", Pet.OWL, new Wand(1, 10), new House(0));
+        Wizard wizard2 = new Wizard("Troll", Pet.OWL, new Wand(1, 10), new House(0));
         wizard2.addSpell(new Stuppefix());
         wizard2.addSpell(new WingardiumLeviosa());
 

@@ -7,7 +7,7 @@ public class CombatHandler {
         int health = (int) (C.getHealth() * (double) length);
         for (int i = 0; i < length ; i++){
             if(i<health){
-                res += "#";
+                res += "❤";
             }
             else {
                 res += "-";

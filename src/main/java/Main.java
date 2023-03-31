@@ -25,41 +25,47 @@ public class Main {
         player.addSpell(new Stuppefix());
         player.addSpell(new WingardiumLeviosa());
 
+        String[] monsters = {"troll", "basilic", "voldemort"};
+
         System.out.println(player);
+        Wizard enemy = null;
+        for (int i = 0; i < monsters.length ; i++) {
+
+            player.setProbOfProtego(0.2);
+            String monster = monsters[i];
+            System.out.println("Mission " + (i+1));
+            System.out.println("Oh no \033[31m"+player.getName()+"\033[0m a " + monster.toLowerCase() +" appeared in the girls' bathroom, save Hermione!");
+            System.out.println("Fight him!!!");
+
+            switch (monster) {
+                case "troll": {
+                    enemy = new Wizard(monster.toLowerCase(), Pet.OWL, new Wand(1, 10), new House(0));
+                    enemy.addSpell(new Hit());
+                    enemy.getSpellResistance().put("Stuppefix", 0.3); // resistance au sort stuppefix
+                    enemy.getSpellResistance().put("WingardiumLeviosa", 5.0); // faiblesse au sort levitation
+                }
+                default: {
+
+                    enemy = new Wizard(monster.toLowerCase(), Pet.OWL, new Wand(1, 10), new House(0));
+                    enemy.addSpell(new Hit());
+                    enemy.getSpellResistance().put("Stuppefix", 0.3); // resistance au sort stuppefix
+                    enemy.getSpellResistance().put("WingardiumLeviosa", 5.0); // faiblesse au sort levitation
+                }
+            }
+
+            if(CombatHandler.fight(player, enemy)){
+                System.out.println("You win");
+            }
+            else {
+                System.out.println("You lose");
+            }
+
+        }
         //mission 1
-        System.out.println("Mission 1");
-        String playerName = player.getName();
-        System.out.println("Oh no \033[31m"+playerName+"\033[0m a troll appeared in the girls' bathroom, save Hermione!");
-        System.out.println("Fight him!!!");
-        Wizard wizard2 = new Wizard("Troll", Pet.OWL, new Wand(1, 10), new House(0));
-        wizard2.addSpell(new Hit());
 
-        wizard2.getSpellResistance().put("Stuppefix", 0.3); // resistance au sort stuppefix
-        wizard2.getSpellResistance().put("WingardiumLeviosa", 5.0); // faiblesse au sort levitation
 
-        if(CombatHandler.fight(player, wizard2)){
-            System.out.println("You win");
-        }
-        else {
-            System.out.println("You lose");
-        }
 
         //mission 2
-        player.setProbOfProtego(0.2);
-        System.out.println("Mission 2");
-        System.out.println("Oh no thomas riddle freed the basilisk. We must defeat him!");
-        Wizard wizard3 = new Wizard("Basilic", Pet.OWL, new Wand(1, 10), new House(0));
-        wizard3.getSpellResistance().put("Stuppefix", 0.0);
-        wizard3.getSpellResistance().put("WingardiumLeviosa", 0.0);
-        player.addSpell(new Hit());
-        wizard3.getSpellResistance().put("Hit",5.0);//use basilic fang
-
-        if(CombatHandler.fight(player, wizard3)){
-            System.out.println("You win");
-        }
-        else {
-            System.out.println("You lose");
-        }
 
 
     }

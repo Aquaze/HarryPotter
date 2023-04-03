@@ -1,11 +1,15 @@
+package com.harrypoter.game;
+
 import java.util.Hashtable;
 import java.util.Random;
-import java.util.ArrayList;
+
 public abstract class Character {
     private double health;
     private double currentHealth;
     private String name;
     private Hashtable<String, Double> spellResistance = new Hashtable<String, Double>();
+
+    
 
     private double probOfProtego = 0 ; //chances of avoiding a hit
 
@@ -22,9 +26,9 @@ public abstract class Character {
         }
         else{ // if we have some resistance to the spell we want to modify the value of the hit
             if (spellResistance.get(spell) != null)
-                this.health -= damage * spellResistance.get(spell);
+                this.currentHealth -= damage * spellResistance.get(spell);
             else
-                this.health -= damage;
+                this.currentHealth -= damage;
         }
     }
 

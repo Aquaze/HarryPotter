@@ -1,3 +1,5 @@
+package com.harrypoter.game;
+
 public class CombatHandler {
     //this class is used to orchestrate a fight
 

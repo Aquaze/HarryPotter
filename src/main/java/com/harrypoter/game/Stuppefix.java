@@ -1,4 +1,4 @@
-
+package com.harrypoter.game;
 
 public class Stuppefix extends AbstractSpell {
     public Stuppefix() {
@@ -6,7 +6,7 @@ public class Stuppefix extends AbstractSpell {
     }
     @Override
     public void useSpell(Character target) {
-        target.hit(0.2, "Stuppefix");
+        target.hit(0.2, "com.harrypoter.game.Stuppefix");
     }
 }
 

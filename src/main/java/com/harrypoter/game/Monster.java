@@ -1,3 +1,5 @@
+package com.harrypoter.game;
+
 public class Monster extends Character {
     private AbstractSpell attack;
 

@@ -1,3 +1,5 @@
+package com.harrypoter.game;
+
 public class House {
     private static String name;
     private int index;

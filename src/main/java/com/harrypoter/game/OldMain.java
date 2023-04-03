@@ -1,11 +1,14 @@
-import enums.Pet;
+package com.harrypoter.game;
+
+import com.harrypoter.game.UI.Game;
+import com.harrypoter.game.enums.Pet;
 
 import java.util.Random;
 import java.util.Scanner;
 
-public class Main {
+public class OldMain {
     public static void main(String[] args) {
-
+        new Game();
 
         System.out.println("Hello wizard, welcome to hogwarts. Ready to discover the mysteries of magic? What is your name?");
         System.out.println("Choose a name");
@@ -25,7 +28,7 @@ public class Main {
         player.addSpell(new Stuppefix());
         player.addSpell(new WingardiumLeviosa());
 
-        String[] monsters = {"troll", "basilic", "voldemort"};
+        String[] monsters = {"troll", "basilic", "Petter","Dolores shading","death eater", "voldemort"};
 
         System.out.println(player);
         Wizard enemy = null;
@@ -41,15 +44,15 @@ public class Main {
                 case "troll": {
                     enemy = new Wizard(monster.toLowerCase(), Pet.OWL, new Wand(1, 10), new House(0));
                     enemy.addSpell(new Hit());
-                    enemy.getSpellResistance().put("Stuppefix", 0.3); // resistance au sort stuppefix
-                    enemy.getSpellResistance().put("WingardiumLeviosa", 5.0); // faiblesse au sort levitation
+                    enemy.getSpellResistance().put("com.harrypoter.game.Stuppefix", 0.3); // resistance au sort stuppefix
+                    enemy.getSpellResistance().put("com.harrypoter.game.WingardiumLeviosa", 5.0); // faiblesse au sort levitation
                 }
                 default: {
 
                     enemy = new Wizard(monster.toLowerCase(), Pet.OWL, new Wand(1, 10), new House(0));
                     enemy.addSpell(new Hit());
-                    enemy.getSpellResistance().put("Stuppefix", 0.3); // resistance au sort stuppefix
-                    enemy.getSpellResistance().put("WingardiumLeviosa", 5.0); // faiblesse au sort levitation
+                    enemy.getSpellResistance().put("com.harrypoter.game.Stuppefix", 0.3); // resistance au sort stuppefix
+                    enemy.getSpellResistance().put("com.harrypoter.game.WingardiumLeviosa", 5.0); // faiblesse au sort levitation
                 }
             }
 

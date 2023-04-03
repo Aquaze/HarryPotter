@@ -1,4 +1,6 @@
-import enums.Core;
+package com.harrypoter.game;
+
+import com.harrypoter.game.enums.Core;
 public class Wand {
     private static Core core;
     private static int length;

@@ -1,3 +1,5 @@
+package com.harrypoter.game;
+
 import java.util.Scanner;
 
 public class InputHandler {

@@ -1,4 +1,6 @@
-import enums.Pet;
+package com.harrypoter.game;
+
+import com.harrypoter.game.enums.Pet;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -7,6 +9,7 @@ public class Wizard extends Character {
     private Wand wand;
     private House house;
     private ArrayList<AbstractSpell> spells;
+    private AbstractSpell currentSpell;
     private ArrayList<AbstractPotion> potions;
 
     public Wizard(String name, Pet pet, Wand wand, House house) {
@@ -16,6 +19,15 @@ public class Wizard extends Character {
         this.house = house;
         this.spells = new ArrayList<>();
         this.potions = new ArrayList<>();
+        this.currentSpell = null;
+    }
+
+    public void setCurrentSpell(AbstractSpell spell) {
+        this.currentSpell = spell;
+    }
+
+    public AbstractSpell getCurrentSpell() {
+        return this.currentSpell;
     }
 
     public void addSpell(AbstractSpell spell) {
@@ -52,7 +64,7 @@ public class Wizard extends Character {
     }
 
     public String toString() {
-        return "Wizard: " + getName() + " Health : " + getHealth() + "/" + getCurrentHealth() +
+        return "com.harrypoter.game.Wizard: " + getName() + " Health : " + getHealth() + "/" + getCurrentHealth() +
                 " pet : " + this.pet + " "
                 + House.getName() + " " + Wand.getLength() + Wand.getCore()+
                 " Spells :" + this.spells + " Potions : " + this.potions;
